@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find flightgoggles)/launch/core.launch">
+  </include>
+
+  <include file="$(find visualizer)/launch/view.launch">
+  </include>
+
+  <include file="$(find flightcontroller)/launch/angle.launch">
+  </include>
+
+  <include file="$(find flightcontroller)/launch/velocity.launch">
+  </include>
+
+  <include file="$(find flightcontroller)/launch/position.launch">
+  </include>
+
+  <include file="$(find sensor_simulation)/launch/sensors.launch">
+    <arg name="map_path" value="room.txt" />
+  </include>
+
+  <node name="simple_movement_node" pkg="simple_control" type="simple_movement.py"></node>
+  <node name="altitude_kalman_node" pkg="altitude" type="altitude_kalman.py" output="screen"></node>
+  <node name="gps_altitude_node" pkg="altitude" type="gps_altitude.py" output="screen"></node>
+  <node name="gps_altitude_ma_node" pkg="altitude" type="gps_altitude_ma.py" output="screen"></node>
+  <node name="lidar_altitude_ma_node" pkg="altitude" type="lidar_altitude_ma.py" output="screen"></node>
+  <node name="altitude_fusion_node" pkg="altitude" type="altitude_fusion.py" output="screen"></node>
+
+
+
+</launch>

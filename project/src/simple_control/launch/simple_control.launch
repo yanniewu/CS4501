@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="map_width" default="11" />
+  <arg name="map_height" default="11" />
+  <arg name="seed" default="6" />
+
+	<!-- TODO add any calls to your code c -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="tower_broadcaster" args="72.721443037 -131.19295607 0 -0.523598776 0 0 world tower"/>
+
+  <!--<node name="local_planner_node" pkg="simple_control" type="local_planner.py" output="screen" /> -->
+  <node name="global_planner_node" pkg="simple_control" type="global_planner.py" output="screen" >
+    <param name="map_width" type="int" value="$(arg map_width)" />
+    <param name="map_height" type="int" value="$(arg map_height)" />
+  </node>
+
+</launch>

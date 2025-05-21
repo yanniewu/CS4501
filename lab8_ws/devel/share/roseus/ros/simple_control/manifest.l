@@ -1,0 +1,1 @@
+/root/CS4501-Labs/lab8_ws/devel/.private/simple_control/share/roseus/ros/simple_control/manifest.l

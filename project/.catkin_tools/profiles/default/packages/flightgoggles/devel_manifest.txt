@@ -1,0 +1,5 @@
+flightgoggles/flightgoggles
+/root/CS4501-Labs/project/devel/.private/flightgoggles/cmake.lock /root/CS4501-Labs/project/devel/./cmake.lock
+/root/CS4501-Labs/project/devel/.private/flightgoggles/lib/pkgconfig/flightgoggles.pc /root/CS4501-Labs/project/devel/lib/pkgconfig/flightgoggles.pc
+/root/CS4501-Labs/project/devel/.private/flightgoggles/share/flightgoggles/cmake/flightgogglesConfig-version.cmake /root/CS4501-Labs/project/devel/share/flightgoggles/cmake/flightgogglesConfig-version.cmake
+/root/CS4501-Labs/project/devel/.private/flightgoggles/share/flightgoggles/cmake/flightgogglesConfig.cmake /root/CS4501-Labs/project/devel/share/flightgoggles/cmake/flightgogglesConfig.cmake

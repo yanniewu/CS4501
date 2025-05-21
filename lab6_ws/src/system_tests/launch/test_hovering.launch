@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find flightcontroller)/launch/fly.launch">
+    <arg name="ship_velocity" default="0.1" />
+    <arg name="ship_waypoints" default="[[0, 0]]" />
+    <!-- TODO: Add PID parameters as args here -->
+
+    <arg name="logging" default="log" />
+  </include>
+
+  <node name="debug_print_node" pkg="system_tests" type="print_node.py" output="screen"/>
+
+  <test test-name="test_hovering" pkg="system_tests" type="drone_behavior_test.py" time-limit="120.0">
+    <param name="duration" type="double" value="30.0" />
+    <param name="rate" type="double" value="10"/>
+    <param name="pz" type="double" value="0.02"/>
+    <param name="iz" type="double" value="0"/>
+    <param name="dz" type="double" value="0"/>
+    <param name="pxy" type="double" value="0.001"/>
+    <param name="ixy" type="double" value="0.0001"/>
+    <param name="dxy" type="double" value="0"/>
+  </test>
+
+</launch>

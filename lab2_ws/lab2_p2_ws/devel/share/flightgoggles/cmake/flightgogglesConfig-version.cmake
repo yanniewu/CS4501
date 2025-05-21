@@ -1,0 +1,1 @@
+/root/CS4501-Labs/lab2_ws/lab2_p2_ws/devel/.private/flightgoggles/share/flightgoggles/cmake/flightgogglesConfig-version.cmake

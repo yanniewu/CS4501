@@ -1,0 +1,1 @@
+/root/CS4501-Labs/lab8_ws/devel/.private/sensor_simulation/share/roseus/ros/sensor_simulation/manifest.l

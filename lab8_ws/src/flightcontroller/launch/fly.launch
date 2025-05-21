@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="map_file" default="map_medium0.yaml"/>
+
+  <include file="$(find flightgoggles)/launch/core.launch">
+  </include>
+
+  <include file="$(find visualizer)/launch/view.launch">
+  </include>
+
+  <include file="$(find flightcontroller)/launch/angle.launch">
+  </include>
+
+  <include file="$(find flightcontroller)/launch/velocity.launch">
+  </include>
+
+  <include file="$(find flightcontroller)/launch/position.launch">
+  </include>
+
+  <include file="$(find sensor_simulation)/launch/sensors.launch">
+  </include>
+
+
+  <node name="geofence_and_mission" pkg="simple_control" type="geofence_and_mission.py" output="screen">
+    <param name="virtual_cage/x" type="double" value="10" />
+    <param name="virtual_cage/y" type="double" value="10" />
+    <param name="virtual_cage/z" type="double" value="10" />
+    <param name="acceptance_range" type="double" value="1" />
+  </node>
+
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find flightcontroller)/maps/$(arg map_file)" />
+
+  <node name="path_planner" pkg="simple_control" type="path_planner.py" output="screen" />
+
+  <node name="tower" pkg="flightcontroller" type="tower.py" output="screen"/>
+
+  <node name="ground_robot_physics" pkg="flightcontroller" type="ground_robot_physics.py" />
+
+  <node name="tower_to_map_node" pkg="simple_control" type="tower_to_map.py" />
+
+  <node name="world_to_drone_node" pkg="simple_control" type="world_to_drone.py" />
+
+  <node name="ground_robot_node" pkg="simple_control" type="ground_robot_controller.py" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="tower_broadcaster" args="72.721443037 -131.19295607 0 -0.523598776 0 0 world tower"/>
+
+
+</launch>

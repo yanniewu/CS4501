@@ -1,0 +1,1 @@
+/root/CS4501-Labs/lab4_ws/devel/.private/catkin_tools_prebuild/local_setup.bash

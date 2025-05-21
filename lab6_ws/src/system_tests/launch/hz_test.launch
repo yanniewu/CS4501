@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find flightcontroller)/launch/fly.launch">
+  </include>
+
+  <test test-name="gps_hztest" pkg="rostest" type="hztest" name="gpsHZ" >
+    <param name="topic" value="uav/sensors/gps" />
+    <param name="hz" value="100" />
+    <param name="hzerror" value="10" />
+    <param name="test_duration" value="10.0" />
+  </test>
+
+  <test test-name="beacon1_hztest" pkg="rostest" type="hztest" name="beacon1HZ" >
+    <param name="topic" value="/ship/beacon1" />
+    <param name="hz" value="4" />
+    <param name="hzerror" value="1" />
+    <param name="test_duration" value="10.0" />
+  </test>
+
+  <test test-name="beacon2_hztest" pkg="rostest" type="hztest" name="beacon2HZ" >
+    <param name="topic" value="/ship/beacon2" />
+    <param name="hz" value="4" />
+    <param name="hzerror" value="1" />
+    <param name="test_duration" value="10.0" />
+  </test>
+
+  <test test-name="followed_hztest" pkg="rostest" type="hztest" name="followedHZ" >
+    <param name="topic" value="/ship/followed" />
+    <param name="hz" value="4" />
+    <param name="hzerror" value="1" />
+    <param name="test_duration" value="10.0" />
+  </test>
+
+  <test test-name="velocityPID_hztest" pkg="rostest" type="hztest" name="velocityPIDHZ" >
+    <param name="topic" value="/uav/input/velocityPID" />
+    <param name="hz" value="10"/>
+    <param name="hzerror" value="1"/>
+    <param name="test_duration" value="10.0" />
+  </test>
+
+
+</launch>
